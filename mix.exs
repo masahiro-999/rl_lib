@@ -4,7 +4,7 @@ defmodule RlLib.MixProject do
   def project do
     [
       app: :rl_lib,
-      version: "0.1.0",
+      version: "0.0.1-dev",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
       deps: deps()
@@ -23,7 +23,7 @@ defmodule RlLib.MixProject do
     [
       {:axon, "~> 0.2.0"},
       {:exla, "~> 0.3.0"},
-      {:deque, "~> 1.0"},
+      {:deque, "~> 1.0"}
     ]
   end
 end

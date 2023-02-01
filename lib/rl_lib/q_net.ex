@@ -1,5 +1,4 @@
 defmodule RlLib.QNet do
-
   alias __MODULE__
 
   defstruct [:step_state, :model, :init_fn, :step_fn]
@@ -11,10 +10,7 @@ defmodule RlLib.QNet do
     |> Axon.dense(4)
   end
 
-  def new(opts \\ []) do
-    {model, opts} = Keyword.pop(opts, :model, build_model())
-    {optimizer, _opts} = Keyword.pop(opts, :optimizer, Axon.Optimizers.sgd())
-
+  def new(model, optimizer) do
     {init_fn, step_fn} =
       train_step(
         model,
